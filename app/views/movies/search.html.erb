@@ -1,0 +1,47 @@
+<h1> Result for <%= @search %> </h1>
+
+<% if @resultat_final[0]==nil %>
+
+
+
+	<div class="warning" align="center"> 
+
+
+
+		<p> SORRY BUT NOTHING COULD BE FOUND</p>
+
+
+
+	</div>
+
+
+
+<% else %>
+
+<h2> Only the first 20 results are displayed </h2>
+<table class="table table-striped">
+      <tr>
+      	<th>Movie</th>
+ 				<th>Director</th>
+        <th>Release Date</th>
+      	<th>Overview</th>      	
+      	<th>Image</th>
+   	  </tr>
+
+  <% @resultat_final.each do |movie| %> 
+    <tr>
+    	<td> <strong> <%= movie.title %> </strong></td>
+			<td> <%= movie.director %> </td>    	
+    	<td> <%= movie.release_date %> </td>
+    	<td> <%= movie.overview %> </td>
+    	<td> <% if movie.poster_path %>
+    		<img src="http://image.tmdb.org/t/p/w185/<%= movie.poster_path %>" >  
+        <%end%>
+    	</td>
+
+    </tr>
+    <% end %>
+  </table>
+
+<% end %>
+

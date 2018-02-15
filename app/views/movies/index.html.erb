@@ -1,0 +1,31 @@
+<div class="container" align="center">
+
+<p> 
+	<img src="http://chesterplayhouse.ca/wp-content/uploads/2018/02/movie_reel.jpg" alt="Movies" style="width:50%; height:400px;">
+</p>
+
+<br>
+
+<%= form_for :movies do |f| %>
+
+ 
+
+  <div class="field">
+
+    <%= f.label :Type_the_name_of_the_movie_you_wanna_look_for %><br />
+
+    <%= f.text_field :content, required: true %>
+
+  </div>
+
+<br>
+
+  <div class="actions">
+
+    <%= f.submit "Search" %>
+
+  </div>
+
+  <br>
+
+<% end %>
